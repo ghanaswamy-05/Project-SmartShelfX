@@ -1,0 +1,108 @@
+/* ===== RoleBasedDashboard.css ===== */
+
+.role-based-dashboard {
+  padding: 2rem;
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
+  color: #222;
+  background-color: #f8fafc;
+  min-height: 100vh;
+  transition: background 0.3s ease;
+}
+
+/* ===== Header Section ===== */
+.dashboard-header {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.dashboard-header:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.1);
+}
+
+.dashboard-header h1 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+}
+
+.dashboard-header p {
+  font-size: 1rem;
+  color: #555;
+}
+
+/* ===== Role-Specific Accent Colors ===== */
+.role-based-dashboard[data-role="ADMIN"] .dashboard-header {
+  border-top: 4px solid #dc2626; /* red-600 */
+}
+
+.role-based-dashboard[data-role="STORE_MANAGER"] .dashboard-header {
+  border-top: 4px solid #2563eb; /* blue-600 */
+}
+
+.role-based-dashboard[data-role="USER"] .dashboard-header {
+  border-top: 4px solid #16a34a; /* green-600 */
+}
+
+/* ===== Loading and Error States ===== */
+.dashboard-loading,
+.dashboard-error {
+  text-align: center;
+  font-size: 1.2rem;
+  margin-top: 3rem;
+}
+
+.dashboard-loading {
+  color: #555;
+  animation: pulse 1.5s infinite ease-in-out;
+}
+
+@keyframes pulse {
+  0% { opacity: 0.6; }
+  50% { opacity: 1; }
+  100% { opacity: 0.6; }
+}
+
+.dashboard-error {
+  color: #dc2626;
+  background: #fee2e2;
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  display: inline-block;
+}
+
+/* ===== Dashboard Content Area ===== */
+.role-based-dashboard > *:last-child {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+/* ===== Responsive Design ===== */
+@media (max-width: 768px) {
+  .role-based-dashboard {
+    padding: 1rem;
+  }
+
+  .dashboard-header {
+    padding: 1rem;
+  }
+
+  .dashboard-header h1 {
+    font-size: 1.5rem;
+  }
+
+  .role-based-dashboard > *:last-child {
+    padding: 1rem;
+  }
+}

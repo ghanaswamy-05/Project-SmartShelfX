@@ -1,0 +1,356 @@
+/* ===== Root Container ===== */
+.product-manager {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #e3f2fd, #f8bbd0);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 40px;
+  font-family: "Poppins", sans-serif;
+}
+
+/* ===== Main Container ===== */
+.product-manager-container {
+  width: 100%;
+  max-width: 1100px;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(15px);
+  border-radius: 20px;
+  padding: 30px 40px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.8s ease;
+}
+
+/* ===== Header ===== */
+.product-manager-header h2 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #333;
+  text-align: center;
+  margin-bottom: 25px;
+  position: relative;
+}
+
+.product-manager-header h2::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, #2196f3, #e91e63);
+  border-radius: 2px;
+  margin: 10px auto 0;
+}
+
+/* ===== Form Section ===== */
+.product-form-section {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 20px 25px;
+  border-radius: 15px;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.product-form .form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+.product-form .form-group label {
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 6px;
+}
+
+.product-form .form-group input {
+  padding: 10px 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  font-size: 0.95rem;
+}
+
+.product-form .form-group input:focus {
+  border-color: #2196f3;
+  box-shadow: 0 0 8px rgba(33, 150, 243, 0.3);
+  outline: none;
+}
+
+/* ===== Image Upload ===== */
+.image-upload-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.image-preview {
+  position: relative;
+  margin-top: 10px;
+  display: inline-block;
+}
+
+.image-preview img {
+  width: 100px;
+  height: 100px;
+  border-radius: 10px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.image-preview img:hover {
+  transform: scale(1.05);
+}
+
+.remove-image-btn {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background: #f44336;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  padding: 3px 6px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  transition: background 0.3s ease;
+}
+
+.remove-image-btn:hover {
+  background: #d32f2f;
+}
+
+/* ===== Buttons ===== */
+.form-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.submit-btn,
+.cancel-btn {
+  flex: 1;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.submit-btn {
+  background: linear-gradient(90deg, #2196f3, #e91e63);
+  color: white;
+}
+
+.submit-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(233, 30, 99, 0.3);
+}
+
+.cancel-btn {
+  background: #f5f5f5;
+  color: #333;
+}
+
+.cancel-btn:hover {
+  background: #ddd;
+}
+
+/* ===== Product Section ===== */
+.products-section {
+  margin-top: 30px;
+}
+
+.section-title {
+  font-size: 1.4rem;
+  margin-bottom: 15px;
+  font-weight: 600;
+  color: #444;
+}
+
+/* ===== Product Cards Grid ===== */
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+/* ===== Product Card ===== */
+.product-card {
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 15px;
+  padding: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  animation: slideUp 0.5s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(33, 150, 243, 0.2);
+}
+
+/* ===== Product Image ===== */
+.product-image-section {
+  text-align: center;
+  position: relative;
+}
+
+.product-image {
+  width: 100%;
+  max-height: 150px;
+  object-fit: cover;
+  border-radius: 12px;
+  transition: transform 0.3s ease;
+}
+
+.product-image:hover {
+  transform: scale(1.05);
+}
+
+.no-image {
+  padding: 30px;
+  color: #999;
+  font-size: 0.9rem;
+  background: #f0f0f0;
+  border-radius: 10px;
+}
+
+/* ===== Product Info ===== */
+.product-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.product-name {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #222;
+}
+
+.stock-badge {
+  padding: 4px 8px;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+/* Stock Colors */
+.in-stock {
+  background: #c8e6c9;
+  color: #2e7d32;
+}
+
+.low-stock {
+  background: #fff3cd;
+  color: #856404;
+}
+
+.out-of-stock {
+  background: #ffcdd2;
+  color: #c62828;
+}
+
+/* ===== Product Stats ===== */
+.product-stats {
+  margin-top: 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.9rem;
+}
+
+.stat-label {
+  color: #777;
+  font-weight: 500;
+}
+
+.stat-value {
+  font-weight: 600;
+  color: #333;
+}
+
+/* ===== Alerts ===== */
+.reorder-alert {
+  background: #fff9c4;
+  color: #f57f17;
+  font-size: 0.85rem;
+  padding: 8px;
+  margin-top: 10px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.out-of-stock-alert {
+  background: #ffcdd2;
+  color: #b71c1c;
+}
+
+/* ===== Product Actions ===== */
+.product-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 12px;
+}
+
+.edit-btn,
+.delete-btn {
+  flex: 1;
+  margin: 3px;
+  border: none;
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.edit-btn {
+  background: #2196f3;
+  color: white;
+}
+
+.edit-btn:hover {
+  background: #1976d2;
+  transform: scale(1.05);
+}
+
+.delete-btn {
+  background: #e91e63;
+  color: white;
+}
+
+.delete-btn:hover {
+  background: #c2185b;
+  transform: scale(1.05);
+}
+
+/* ===== Loading + Empty States ===== */
+.loading,
+.no-products {
+  text-align: center;
+  font-size: 1rem;
+  color: #555;
+  margin-top: 30px;
+}
+
+/* ===== Animations ===== */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
